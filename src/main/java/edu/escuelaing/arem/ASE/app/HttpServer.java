@@ -84,9 +84,19 @@ public class HttpServer {
 
     }
 
-    public static String htttpClientHtml(String path, Socket clienSocket) throws IOException {
+    /**
+     * HTTP answer with the content of the specified file on the path
+     * 
+     * @param path         route to the specified file
+     * @param clientSocket socket of the client to send immediately the response, in
+     *                     case of an image file
+     * @return string with the http answer with the content of the file
+     * @throws IOException if there is an error with the inputs or outputs
+     */
+    public static String htttpClientHtml(String path, Socket clientSocket) throws IOException {
         String content_type = "";
 
+        // content type related to the media type of the resource
         if (path.endsWith(".html")) {
             content_type = "text/html";
         } else if (path.endsWith(".js")) {
@@ -107,7 +117,7 @@ public class HttpServer {
 
         if (content_type.equals("image/png")) {
             byte[] imageData = Files.readAllBytes(file);
-            OutputStream output = clienSocket.getOutputStream();
+            OutputStream output = clientSocket.getOutputStream();
             output.write(outputLine.getBytes());
             output.write(imageData);
 
