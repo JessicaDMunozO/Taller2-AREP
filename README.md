@@ -19,7 +19,7 @@ Después, para compilar ejecute el comando `mvn package` y por último ejecute e
 Con el proyecto corriendo debe abrir en un navegador la siguiente dirección: http://localhost:35000/movies.html allí podrá observar el *html* completo, que fue traido desde el disco local.
 
 ## Diseño
-Se tiene un servidor HTTP que escucha por el puerto 35000, el cual obtiene la URI de la solicitud, que sirve para determinar la ruta al recurso solicitado. Y por medio del método *htttpClientHtml*
+Se tiene un servidor HTTP que escucha por el puerto 35000, el cual obtiene la URI de la solicitud, que sirve para determinar la ruta al recurso solicitado. Y por medio del método *httpClientHtml*
 se genera la respuesta a la solicitud dependiendo de la ruta. De modo que, se identifica el tipo de recurso, entre *html*, *java script*, *css* e imagen *PNG* y se 
 retorna la respuesta a la solicitud.
 
