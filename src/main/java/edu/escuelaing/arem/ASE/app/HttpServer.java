@@ -53,7 +53,7 @@ public class HttpServer {
             System.out.println("Path: " + fileuri.getPath());
 
             try {
-                outputLine = htttpClientHtml(fileuri.getPath(), clientSocket);
+                outputLine = httpClientHtml(fileuri.getPath(), clientSocket);
             } catch (IOException e) {
                 outputLine = httpError();
             }
@@ -93,7 +93,7 @@ public class HttpServer {
      * @return string with the http answer with the content of the file
      * @throws IOException if there is an error with the inputs or outputs
      */
-    public static String htttpClientHtml(String path, Socket clientSocket) throws IOException {
+    public static String httpClientHtml(String path, Socket clientSocket) throws IOException {
         String content_type = "";
 
         // content type related to the media type of the resource
