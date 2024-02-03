@@ -1,6 +1,6 @@
 # Taller 2 - AREP
 Para este taller se trabajó sobre un servidor web en Java que debe retornar los archivos solicitados del disco local. En particular se tienen archivos *html*, *java script*, *css* e imágenes.
-Los cuales se relacionan con el tema trabajado en el taller anterior con respecto a las películas.
+Los cuales se relacionan con el tema de películas trabajado en el taller anterior.
 ## Empezando
 Las siguientes instrucciones permiten que obtenga una copia del proyecto en funcionamiento.
 ### Prerrequisitos
@@ -22,6 +22,8 @@ Con el proyecto corriendo debe abrir en un navegador la siguiente dirección: ht
 Se tiene un servidor HTTP que escucha por el puerto 35000, el cual obtiene la URI de la solicitud, que sirve para determinar la ruta al recurso solicitado. Y por medio del método *httpClientHtml*
 se genera la respuesta a la solicitud dependiendo de la ruta. De modo que, se identifica el tipo de recurso, entre *html*, *java script*, *css* e imagen *PNG* y se 
 retorna la respuesta a la solicitud.
+
+En cuanto a la distribución, se tienen dos carpetas, una con el código del servidor y otra que contiene los recursos *html*, *java script*, *css* e imagen *PNG* del disco local.
 
 ## Evaluación
 Al ingresar la dirección http://localhost:35000/movies.html se muestra la página html que tiene css, script e imagen.
