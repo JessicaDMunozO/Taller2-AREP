@@ -36,11 +36,11 @@ Y si se realiza una búsqueda de una película al darle clic en *Submit* se ve l
 
 Para solicitar el script se debe ingresar la dirección http://localhost:35000/moviesScript.js
 
-![image](https://github.com/JessicaDMunozO/Taller2-AREP/assets/123814482/f249da5a-1f50-4b88-bb3c-675078758aef)
+![image](https://github.com/JessicaDMunozO/Taller2-AREP/assets/123814482/b6e08236-1a41-46c4-bad6-232581b7d8e2)
 
 Para solicitar el css se debe ingresar la dirección http://localhost:35000/styles.css
 
-![image](https://github.com/JessicaDMunozO/Taller2-AREP/assets/123814482/b76e4a34-7099-4eb8-8dba-608672afe839)
+![image](https://github.com/JessicaDMunozO/Taller2-AREP/assets/123814482/44749b00-93f0-439f-b294-d6f64a1e25d1)
 
 Y para solicitar la imagen PNG se debe ingresar la dirección http://localhost:35000/movie.png
 
