@@ -1,6 +1,6 @@
 # Taller 2 - AREP
 Para este taller se trabajó sobre un servidor web en Java que debe retornar los archivos solicitados del disco local. En particular se tienen archivos *html*, *java script*, *css* e imágenes.
-Los cuales se relacionan con el tema de películas trabajado en el taller anterior.
+Los cuales se relacionan con el tema de búsqueda de películas trabajado en el taller anterior.
 ## Empezando
 Las siguientes instrucciones permiten que obtenga una copia del proyecto en funcionamiento.
 ### Prerrequisitos
@@ -30,9 +30,13 @@ Al ingresar la dirección http://localhost:35000/movies.html se muestra la pági
 
 ![image](https://github.com/JessicaDMunozO/Taller2-AREP/assets/123814482/1a42866c-f0d8-4241-b793-5fb057f66c3f)
 
+Y si se realiza una búsqueda de una película al darle clic en *Submit* se ve la información de la película solicitada.
+
+![image](https://github.com/JessicaDMunozO/Taller2-AREP/assets/123814482/430f01f5-204d-4fdf-98ce-ff6aded5d0ea)
+
 Para solicitar el script se debe ingresar la dirección http://localhost:35000/moviesScript.js
 
-![image](https://github.com/JessicaDMunozO/Taller2-AREP/assets/123814482/6c996c1b-b8b7-495f-8b17-c2d2d7f21097)
+![image](https://github.com/JessicaDMunozO/Taller2-AREP/assets/123814482/f249da5a-1f50-4b88-bb3c-675078758aef)
 
 Para solicitar el css se debe ingresar la dirección http://localhost:35000/styles.css
 
