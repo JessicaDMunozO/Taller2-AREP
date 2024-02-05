@@ -9,6 +9,11 @@ import java.io.*;
 
 public class HttpServer {
 
+    /**
+     * ApiMovie instance to search for information about a given movie name
+     */
+    private static ApiMovie myAPI = new ApiMovie();
+
     public static void main(String[] args) throws IOException, URISyntaxException {
         ServerSocket serverSocket = null;
         try {
@@ -33,10 +38,11 @@ public class HttpServer {
             BufferedReader in = new BufferedReader(
                     new InputStreamReader(
                             clientSocket.getInputStream()));
-            String inputLine, outputLine;
+            String inputLine, outputLine = "";
 
             boolean firstLine = true;
             String uriStr = "";
+            String movieName = "";
 
             while ((inputLine = in.readLine()) != null) {
                 if (firstLine) {
@@ -52,11 +58,18 @@ public class HttpServer {
             URI fileuri = new URI(uriStr);
             System.out.println("Path: " + fileuri.getPath());
 
-            try {
-                outputLine = httpClientHtml(fileuri.getPath(), clientSocket);
-            } catch (IOException e) {
-                outputLine = httpError();
+            if (uriStr.contains("movie?title")) {
+                String[] parts = uriStr.split("=");
+                movieName = parts[1];
+                printMovieResult(movieName, out);
+            } else {
+                try {
+                    outputLine = httpClientHtml(fileuri.getPath(), clientSocket);
+                } catch (IOException e) {
+                    outputLine = httpError();
+                }
             }
+
             out.println(outputLine);
 
             out.close();
@@ -134,4 +147,27 @@ public class HttpServer {
 
     }
 
+    /**
+     * Print information about the specific movie
+     * 
+     * @param movieName name of the movie to be seached
+     * @param out       PrintWriter to send response to the client
+     */
+    private static void printMovieResult(String movieName, PrintWriter out) {
+        String movieInfo;
+
+        try {
+            movieInfo = myAPI.searchMovieInformation(movieName);
+        } catch (Exception e) {
+            movieInfo = "Ups, try later.";
+            e.printStackTrace();
+        }
+
+        String movieResponse = "HTTP/1.1 200 OK\r\n"
+                + "Content-Type:text/html; charset=ISO-8859-1\r\n"
+                + "\r\n"
+                + movieInfo;
+
+        out.println(movieResponse);
+    }
 }
